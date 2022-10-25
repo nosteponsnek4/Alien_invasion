@@ -3,10 +3,9 @@ import sys
 from settings import Settings
 from ship import Ship
 
-class AlienInvasion():
 
+class AlienInvasion:
     def __init__(self):
-
         # initialize the game and create a screen object
         pygame.init()
         # create an object for the class Settings
@@ -15,13 +14,11 @@ class AlienInvasion():
         self.screen = pygame.display.set_mode((self.ai_settings.screen_width, self.ai_settings.screen_height))
         pygame.display.set_caption('Alien Invasion')
 
-
         # make a ship
         self.ship = Ship(self.screen)
 
     def run_game(self):
         while True:
-
             # Watch for keyboard and mouse events.
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -37,7 +34,9 @@ class AlienInvasion():
             # Make the most recently drawn screen visible
             pygame.display.flip()
 
+
 if __name__ == '__main__':
+
     # Make a game instance, and run the game.
     ai = AlienInvasion()
     ai.run_game()
